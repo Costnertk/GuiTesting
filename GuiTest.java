@@ -10,16 +10,20 @@ public class GuiTest implements ActionListener{
 
     private int count = 0;
     JLabel label;
-    
+    JButton buttonAdd;
+    JButton buttonSub;
+
     public GuiTest(){
         JFrame frame = new JFrame();
-        JButton button = new JButton("Click Me");
+        buttonAdd = new JButton("Add");
+        buttonSub = new JButton("Subtract");
         label = new JLabel("Number of Clicks : 0");
         JPanel panel = new JPanel();
-
-        panel.setBorder(BorderFactory.createEmptyBorder(100,100,100,100));
-        panel.setLayout(new GridLayout(0,1));
-        panel.add(button);
+        label.getBounds()
+        panel.setBorder(BorderFactory.createEmptyBorder(50,150,50,150));
+        panel.setLayout(new GridLayout(2,2));
+        panel.add(buttonAdd);
+        panel.add(buttonSub);
         panel.add(label);
         
         frame.add(panel, BorderLayout.CENTER);
@@ -28,7 +32,8 @@ public class GuiTest implements ActionListener{
         frame.pack();
         frame.setVisible(true);
 
-        button.addActionListener(this);
+        buttonAdd.addActionListener(this);
+        buttonSub.addActionListener(this);
     }
     
     public static void main(String[] args) {
@@ -36,7 +41,14 @@ public class GuiTest implements ActionListener{
     }
 
     public void actionPerformed(ActionEvent e) {
-        count++;
+        Object source = e.getSource();
+        
+        if(source == buttonAdd){
+            count++;
+        }
+        else if(source == buttonSub){
+            count--;
+        }
         label.setText("Number of Clicks: " + count);
     }
 }
