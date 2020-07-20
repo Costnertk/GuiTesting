@@ -36,16 +36,9 @@ public class RandomColor implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e){
-        while(true){
-            if(button.isEnabled()){
-                int RValue = (int) (Math.random() * 255);
-                int GValue = (int) (Math.random() * 255);
-                int BValue = (int) (Math.random() * 255);
-                panel.setBackground(new Color(RValue, GValue, BValue));
-            }
-            else if(!button.isEnabled()){
-                break;
-            }
-        }
+        int RValue = (int) (Math.random() * 255);
+        int GValue = (int) (Math.random() * 255);
+        int BValue = (int) (Math.random() * 255);
+        panel.setBackground(new Color(RValue, GValue, BValue));       
     }
 }
