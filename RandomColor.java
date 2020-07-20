@@ -2,6 +2,7 @@ import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.time.LocalTime;
 import javax.swing.BorderFactory;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -35,10 +36,10 @@ public class RandomColor implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e){
+    public void actionPerformed(ActionEvent e) { 
         int RValue = (int) (Math.random() * 255);
         int GValue = (int) (Math.random() * 255);
         int BValue = (int) (Math.random() * 255);
-        panel.setBackground(new Color(RValue, GValue, BValue));       
+        panel.setBackground(new Color(RValue, GValue, BValue));
     }
 }
